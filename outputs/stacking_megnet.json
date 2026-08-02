@@ -1,0 +1,21 @@
+{
+  "gnn": "megnet",
+  "best_combo": [
+    "catboost",
+    "ftt",
+    "lightgbm",
+    "mlp",
+    "random_forest",
+    "xgboost"
+  ],
+  "val_metrics_insample": {
+    "r2": 0.9310652317867912,
+    "mae": 0.1701462771982535,
+    "mse": 0.134698548635097
+  },
+  "test_metrics": {
+    "r2": 0.9235937087358019,
+    "mae": 0.17317057694801552,
+    "mse": 0.15079333910268677
+  }
+}

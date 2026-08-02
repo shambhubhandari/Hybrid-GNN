@@ -1,0 +1,21 @@
+{
+  "gnn": "schnet",
+  "best_combo": [
+    "catboost",
+    "ftt",
+    "lightgbm",
+    "mlp",
+    "random_forest",
+    "xgboost"
+  ],
+  "val_metrics_insample": {
+    "r2": 0.8954159748602232,
+    "mae": 0.2213448717411799,
+    "mse": 0.20435720264081678
+  },
+  "test_metrics": {
+    "r2": 0.8829706077873894,
+    "mae": 0.22787560192661582,
+    "mse": 0.23096596540560724
+  }
+}

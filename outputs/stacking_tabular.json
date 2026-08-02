@@ -1,0 +1,21 @@
+{
+  "gnn": "tabular",
+  "best_combo": [
+    "catboost",
+    "ftt",
+    "lightgbm",
+    "mlp",
+    "random_forest",
+    "xgboost"
+  ],
+  "val_metrics_insample": {
+    "r2": 0.8424133515808155,
+    "mae": 0.29318686438966657,
+    "mse": 0.3079243374066521
+  },
+  "test_metrics": {
+    "r2": 0.8373233331129304,
+    "mae": 0.2979338732900123,
+    "mse": 0.3210541617466399
+  }
+}

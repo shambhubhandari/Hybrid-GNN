@@ -1,0 +1,20 @@
+{
+  "gnn": "cgcnn",
+  "best_combo": [
+    "catboost",
+    "ftt",
+    "lightgbm",
+    "random_forest",
+    "xgboost"
+  ],
+  "val_metrics_insample": {
+    "r2": 0.9131000486418932,
+    "mae": 0.20570763288657,
+    "mse": 0.16980251950937328
+  },
+  "test_metrics": {
+    "r2": 0.9089486010459382,
+    "mae": 0.2076414123779339,
+    "mse": 0.17969651780084964
+  }
+}
