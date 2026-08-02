@@ -1,6 +1,6 @@
-==================================================
+============================================================================================================
 Audit: Comment on Hybrid Graph–Machine Learning Framework for Accurate and Interpretable Band Gap Prediction
-==================================================
+============================================================================================================
 
 .. image:: https://img.shields.io/badge/Python-3.11-blue.svg
    :target: https://www.python.org/
@@ -25,7 +25,7 @@ Audit: Comment on Hybrid Graph–Machine Learning Framework for Accurate and Int
 .. image:: https://img.shields.io/badge/Reproducible-Run%20All-success.svg
    :alt: Reproducible: Run All
 
-**Repository for commenting on ** *"Hybrid Graph–Machine Learning
+**Repository for the Comment on** *"Hybrid Graph–Machine Learning
 Framework for Accurate and Interpretable Band Gap Prediction"*
 (`J. Chem. Inf. Model. 2026, 66, 3787
 <https://pubs.acs.org/jcisd8/article/66/7/3787/5138424/Hybrid-Graph-Machine-Learning-Framework-for>`_),
@@ -45,7 +45,7 @@ Quick start
 Runs in a few minutes on a laptop CPU.
 
 Repository Architecture
-======
+=======================
 
 ::
 
@@ -76,27 +76,30 @@ Repository Architecture
     └── requirements.txt            # Pinned dependencies
 
 
- Models and Methods
- ====================
+Models and Methods
+==================
 
 The audited framework combines graph embeddings with tabular regressors.
 
 **Graph embedding models**
+
 - CGCNN
-- MEGNet (pretrained `Bandgap_MP_2018`)
+- MEGNet (pretrained ``Bandgap_MP_2018``)
 - SchNet
 
 **Base regressors**
+
 - CatBoost, XGBoost, LightGBM
 - Multi-layer perceptron
 - FT-Transformer
 - Random forest
 
 **Ensemble**
+
 - RidgeCV stacking over the base regressors
 
- Scope
- =====
+Scope
+=====
 
 This repository does not reimplement the framework. It reproduces the published
 pipeline on the authors' released data, then removes each leakage source in turn
@@ -106,15 +109,15 @@ Acknowledgements
 ==================
 
 This audit builds directly on the framework and released code of Aydin and
-co-workers ([YZE-Crystal/bandgap-prediction](https://github.com/YZE-Crystal/bandgap-prediction)),
-whose open publication of both dataset and implementation made independent
-verification possible.
+co-workers (`YZE-Crystal/bandgap-prediction
+<https://github.com/YZE-Crystal/bandgap-prediction>`_), whose open publication of
+both dataset and implementation made independent verification possible.
 
-The `src/` directory contains functions derived from that repository, used under
-the Apache License 2.0. Modified files carry a header noting the changes. See
-`NOTICE` for attribution details.
+The ``src/`` directory contains functions derived from that repository, used
+under the Apache License 2.0. Modified files carry a header noting the changes.
+See ``NOTICE`` for attribution details.
 
 License
- =======
+=======
 
-Apache License 2.0, matching the upstream repository. See `LICENSE`.
+Apache License 2.0, matching the upstream repository. See ``LICENSE``.
