@@ -11,10 +11,7 @@ from src.logging_util import get_logger
 
 logger = get_logger(__name__)
 
-# Post-DFT proxies: direct copies of DFT/MP output labels, unknowable before
-# running the calculation the model claims to replace. predicted_band_gap is
-# deliberately excluded — it is a GNN's own prediction (a legitimate feature)
-# kept in the honest run; its leakage is a separate, embedding-axis mechanism.
+# Post-DFT proxies: direct copies of DFT/MP output labels
 POST_DFT_COLUMNS = [
     "is_metal",
     "is_gap_direct",
