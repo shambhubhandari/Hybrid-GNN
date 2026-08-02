@@ -36,6 +36,9 @@ Framework for Accurate and Interpretable Band Gap Prediction"*
 computed on the authors' published dataset
 (`Zenodo 10.5281/zenodo.18481208 <https://doi.org/10.5281/zenodo.18481208>`_,
 132,364 entries).
+.. image:: figures/leakage_barplot.png
+   :alt: Leakage Barplot
+   :align: center
 
 Quick start
 ===========
