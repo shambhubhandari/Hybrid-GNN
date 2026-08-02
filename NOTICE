@@ -1,0 +1,71 @@
+Audit: Comment on "Hybrid Graph-Machine Learning Framework for Accurate and
+Interpretable Band Gap Prediction"
+
+Copyright 2026 Shambhu Bhandari SHARMA
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may not use
+this file except in compliance with the License. You may obtain a copy of the
+License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software distributed
+under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+CONDITIONS OF ANY KIND, either express or implied. See the License for the
+specific language governing permissions and limitations under the License.
+
+--------------------------------------------------------------------------------
+THIRD-PARTY ATTRIBUTION
+--------------------------------------------------------------------------------
+
+This work contains material derived from:
+
+    bandgap-prediction
+    Copyright 2026 YZE-Crystal
+    https://github.com/YZE-Crystal/bandgap-prediction
+    Licensed under the Apache License, Version 2.0
+
+Files in src/ are derived from that repository. They reproduce the published
+pipeline so that the audit exercises the authors' own code rather than a
+re-implementation:
+
+    src/protocol.py     70/15/15 stratified holdout split
+    src/features.py     feature-column resolver
+    src/gbdt.py         XGBoost training routine
+    src/config.py       Optuna-tuned XGBoost hyper-parameters
+    src/metrics.py      R2 / MAE / MSE scoring
+    src/wrappers.py     estimator wrappers
+
+    src/leakage.py      original to this audit (post-DFT proxy ablation)
+    src/logging_util.py original to this audit
+
+Modifications relative to upstream: the above files were extracted as a
+standalone slice, import paths were rewritten to the src package, and logging
+was added. No change alters the numerical behaviour of the reproduced pipeline.
+
+--------------------------------------------------------------------------------
+DATA
+--------------------------------------------------------------------------------
+
+Feature tables under data/ are derived from the authors' published dataset:
+
+    Zenodo, DOI 10.5281/zenodo.18481208 (132,364 entries)
+
+converted from the released materialsproject_data.xlsx into typed Parquet
+tables. The underlying materials data originates from the Materials Project
+(https://materialsproject.org), and the MEGNet identifier table derives from the
+Materials Project 2018.6.1 release used by the pretrained Bandgap_MP_2018 model.
+
+Redistribution of these derived tables is subject to the terms attached to the
+original Zenodo deposit and to the Materials Project data licence.
+
+--------------------------------------------------------------------------------
+SUBJECT OF THE COMMENT
+--------------------------------------------------------------------------------
+
+Aydin et al., "Hybrid Graph-Machine Learning Framework for Accurate and
+Interpretable Band Gap Prediction", J. Chem. Inf. Model. 2026, 66 (7),
+3787-3802.
+
+Quotations from the authors' source code appear in the notebook for the purpose
+of scholarly criticism and review, each attributed to its originating file.

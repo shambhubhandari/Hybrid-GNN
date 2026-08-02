@@ -1,12 +1,11 @@
-# Copied from src/models/gbdt.py — train_xgboost (the only regressor the ablation
-# retrains live). Same hyper-parameters as the paper's pipeline (src.config).
+"""XGBoost training with the paper's Optuna-tuned hyper-parameters."""
 from src.logging_util import get_logger
 
 logger = get_logger(__name__)
 
 
 def train_xgboost(X_train, y_train, X_val, y_val, params: dict):
-    """Best individual model on the MEGNet feature set (paper: R2 = 0.921)."""
+    """Train an XGBoost regressor with early stopping on the validation set."""
     import xgboost as xgb
 
     # Pull training-control params before passing the rest to xgb.train.

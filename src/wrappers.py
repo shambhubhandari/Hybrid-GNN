@@ -1,10 +1,8 @@
-# Copied verbatim from src/models/wrappers.py.
-class XGBWrapper:
-    """Gives a raw xgboost Booster a .predict(X) that accepts numpy/DataFrame.
+"""Adapter that gives a raw xgboost Booster a sklearn-style .predict(X)."""
 
-    train_xgboost() returns a Booster, whose predict() wants a DMatrix; this
-    adapts it to the sklearn-style .predict(X) the harness and SHAP expect.
-    """
+
+class XGBWrapper:
+    """Wrap a Booster so .predict(X) accepts a numpy array or DataFrame."""
 
     def __init__(self, booster):
         self._b = booster

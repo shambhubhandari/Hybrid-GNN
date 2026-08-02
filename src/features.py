@@ -1,6 +1,4 @@
-# Copied from src/models/common.py — resolve_feature_columns. The feature matrix
-# every entry point (training, ablation, SHAP) must agree on, so leaky and honest
-# runs score on the identical column set.
+"""Resolve the model feature columns (identical for leaky and honest runs)."""
 from src import config
 from src.logging_util import get_logger
 
@@ -8,11 +6,10 @@ logger = get_logger(__name__)
 
 
 def resolve_feature_columns(df, target: str) -> list:
-    """Select exactly the model feature columns declared in config.FEATURES.
+    """Select the feature columns declared in config.FEATURES.
 
-    Expands pca_* to the GNN PCA columns and silently skips any declared column
-    that is absent from a given arm (tabular has neither pca_* nor
-    predicted_band_gap). Mirrors the resolver the paper's pipeline uses.
+    Expands pca_* to the GNN PCA columns and skips any declared column that is
+    absent from a given arm (tabular has neither pca_* nor predicted_band_gap).
     """
     feat_cfg = config.models_cfg.get("features", {})
     feature_cols = []

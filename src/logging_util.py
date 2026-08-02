@@ -1,4 +1,4 @@
-# Copied from src/utils/logging.py — one stdout logger for the audit modules.
+"""Shared stdout logger for the audit modules."""
 import logging
 import sys
 
@@ -7,7 +7,7 @@ _DATEFMT = "%Y-%m-%d %H:%M:%S"
 
 
 def get_logger(name: str, level: int = logging.INFO) -> logging.Logger:
-    """Return a stdout logger. Safe to call repeatedly (no duplicate handlers)."""
+    """Return a stdout logger; safe to call repeatedly (no duplicate handlers)."""
     import warnings
     warnings.filterwarnings("ignore")
     logger = logging.getLogger(name)

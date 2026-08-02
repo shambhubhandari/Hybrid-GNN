@@ -1,14 +1,10 @@
-# =============================================================================
-# config.py — the *values* the ablation needs, lifted verbatim from the full
-# repo's src/config.py + configs/models.yaml. Kept as a plain module so the
-# audit codebase has no YAML / path machinery to carry.
-# =============================================================================
+"""Configuration for the ablation: XGBoost hyper-parameters and feature groups."""
 
 TARGET = "band_gap"
 RANDOM_STATE = 42
 ID_COLS = ["material_id", "formula_pretty"]
 
-# The exact XGBoost hyper-parameters the paper's pipeline uses (Optuna-tuned).
+# The XGBoost hyper-parameters the paper's pipeline uses (Optuna-tuned).
 XGBOOST_PARAMS = {
     "objective": "reg:squarederror",
     "learning_rate": 0.03865291106813676,
@@ -26,8 +22,8 @@ XGBOOST_PARAMS = {
     "early_stopping_rounds": 100,
 }
 
-# The model feature groups (configs/models.yaml -> features). resolve_feature_columns
-# selects exactly these from the feature table; pca_* expands to the GNN PCA columns.
+# Model feature groups. resolve_feature_columns selects these from the feature
+# table; pca_* expands to the GNN PCA columns.
 FEATURES = {
     "physical": [
         "MagpieData maximum Electronegativity", "MagpieData mean CovalentRadius",
@@ -41,5 +37,5 @@ FEATURES = {
     "gnn": ["predicted_band_gap", "pca_*"],
 }
 
-# Mirror the interface resolve_feature_columns / train_xgboost expect.
+# Interface expected by resolve_feature_columns / train_xgboost.
 models_cfg = {"models": {"xgboost": XGBOOST_PARAMS}, "features": FEATURES}

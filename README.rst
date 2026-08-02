@@ -2,6 +2,10 @@
 Comment on Hybrid Graph–Machine Learning Framework for Accurate and Interpretable Band Gap Prediction
 ============================================================================================================
 
+.. image:: https://img.shields.io/badge/License-Apache_2.0-blue.svg
+   :target: https://opensource.org/licenses/Apache-2.0
+   :alt: License: Apache 2.0
+
 .. image:: https://img.shields.io/badge/Python-3.11-blue.svg
    :target: https://www.python.org/
    :alt: Python 3.11
@@ -114,8 +118,8 @@ co-workers (`YZE-Crystal/bandgap-prediction
 both dataset and implementation made independent verification possible.
 
 The ``src/`` directory contains functions derived from that repository, used
-under the Apache License 2.0. Modified files carry a header noting the changes.
-See ``NOTICE`` for attribution details.
+under the Apache License 2.0. ``NOTICE`` lists which files are derived, which
+are original to this audit, and how the derived files were modified.
 
 License
 =======

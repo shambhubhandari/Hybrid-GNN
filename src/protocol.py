@@ -1,5 +1,4 @@
-# Copied from src/leakage/protocol.py — the ONE 70/15/15 stratified split both
-# the paper's stages use (stack.ipynb). Only stratified_holdout is needed here.
+"""The 70/15/15 stratified holdout shared by every stage."""
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -16,11 +15,7 @@ def stratified_holdout(
     quantiles: int = 10,
     random_state: int = 42,
 ):
-    """The upstream 70/15/15 stratified split, reproduced exactly.
-
-    Stratifies on qcut bins of the target, as stack.ipynb does, so band gaps are
-    balanced across the three sets.
-    """
+    """70/15/15 split, stratified on qcut bins of the target."""
     y_bins = pd.qcut(y, q=quantiles, duplicates="drop", labels=False)
     X_tv, X_test, y_tv, y_test = train_test_split(
         X, y, test_size=test_size, shuffle=True, random_state=random_state, stratify=y_bins
