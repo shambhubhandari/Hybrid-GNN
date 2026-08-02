@@ -1,5 +1,5 @@
 ============================================================================================================
-Audit: Comment on Hybrid Graph–Machine Learning Framework for Accurate and Interpretable Band Gap Prediction
+Comment on Hybrid Graph–Machine Learning Framework for Accurate and Interpretable Band Gap Prediction
 ============================================================================================================
 
 .. image:: https://img.shields.io/badge/Python-3.11-blue.svg
